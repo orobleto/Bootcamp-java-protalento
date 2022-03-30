@@ -6,11 +6,14 @@ import java.util.Scanner;
 public class Ejercicio1 {
 	public static void main(String[] args) {
 		// vamos a pedir notas
-		// promedio de notas
+		// promedio de notas, notas maxima y nota minima
 		// declarar variables
 		float[] notas;
 		float promedio;
+		float notaMayor;
+		float notaMenor;
 		int cantidadAlumnos;
+
 		Scanner teclado = new Scanner(System.in);
 
 		System.out.print("Ingresa la cantidad de alumnos para asignarle notas: ");
@@ -45,14 +48,29 @@ public class Ejercicio1 {
 
 		// calcular los datos
 		promedio = 0;
+		notaMayor = notas[0]; // un valor muy bajo
+		notaMenor = notas[0]; // un valor muy alto
 		for (int i = 0; i < notas.length; i++) {
 			promedio += notas[i];
+			
+			if (i == 0) {
+				continue;
+			}
+
+			if (notaMayor < notas[i]) {
+				notaMayor = notas[i];
+			}
+
+			if (notaMenor > notas[i]) {
+				notaMenor = notas[i];
+			}
 		}
 
 		// dividir entre la cantidad de elementos
 		promedio /= notas.length; // cantidadAlumnos;
 		System.out.println(String.format("El promedio del salon es %.2f", promedio));
-
+		System.out.println(String.format("La nota mayor es %.2f", notaMayor));
+		System.out.println(String.format("La nota menor es %.2f", notaMenor));
 		//
 
 		// map filter reduce map(codigo).filter().
