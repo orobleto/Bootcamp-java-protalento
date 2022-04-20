@@ -7,6 +7,7 @@ import com.protalento.entidades.Documento;
 import com.protalento.entidades.Empleado;
 import com.protalento.entidades.Moderador;
 import com.protalento.entidades.Profesor;
+import com.protalento.entidades.ProfesorSustituto;
 import com.protalento.entidades.UtilidadesFecha;
 
 public class AppHerencia {
@@ -27,6 +28,9 @@ public class AppHerencia {
 		Moderador moderador = new Moderador();
 
 		moderador.setSueldo(85.6f);
+
+		ProfesorSustituto profesorSustituto = new ProfesorSustituto();
+		profesorSustituto.setDocumento(new Documento());
 
 		System.out.println(empleado1.getSueldo());
 		System.out.println(profesor.getSueldo());
