@@ -86,4 +86,8 @@ public class Usuario implements Cloneable {
 		this.fechacreacion = fechacreacion;
 	}
 
+	public int ordenFechaCreacion(Usuario usuario) {
+		return this.fechacreacion.compareTo(usuario.fechacreacion);
+	}
+
 }
